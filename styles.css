@@ -120,28 +120,29 @@
 .dropdown {
   display: fixed;
   position: relative;
-  margin-top: 0rem;
-  position: absolute;
-  z-index: 100;
+  z-index: 0;
 }
 
 .dropdown-item {
   display: none;
   position: absolute;
-  background-color: #fff;
-  min-width: 160px;
-  z-index: 1;
+  /* background-color: #fff; */
+  min-width: 170px;
+  width: 100%;
+  z-index: 100;
+  margin: 0rem;
 }
 
 .dropdown-item a{
   background-color: #E2C2B9;
-  padding: 12px 16px;
+  padding: 15px 20px;
   text-decoration: none;
   display: block;
 }
 
 .dropdown-item a:hover {
   color: #998CEB;
+  transition: all 0.2s ease;
 }
 
 .navbar__item:hover .dropdown-item {
@@ -587,7 +588,7 @@
 
 .navbar2__links:hover { 
    color: #A9A9A9;
-   transition: all 0.3s ease; 
+   transition: all 0.2s ease; 
 }
 
 @media screen and (max-width: 960px) { /*when the screen gets too small, make a condensed menu bar*/
@@ -685,6 +686,7 @@
   }
 }
 
+/* PAGE 2 CONTENT IS SAMANTHA PAGE FOR REFERENCE!!! */
 .page2 {
   background-color: #F3F1F5;
 }
@@ -701,7 +703,6 @@
   max-width: 1350px;
   padding: 0 50px;
 }
-
 .page2__content h1 {
   font-size: 2.5rem;
   background-color: #131313;
@@ -712,7 +713,6 @@
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
-
 .page2__content h2 {
   font-size: 1.7rem;
   margin-top: 2.5rem;
@@ -724,7 +724,6 @@
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
-
 .page2__content p {
   font-size: 1.2rem;
   background-color: #141414;
@@ -736,13 +735,6 @@
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
-
-/* .main__content h3 {
-  margin-top: 11rem;
-  font-size: 2rem;
-  font-weight: 700;
-} */
-
 /* .page2__content h4 {
   font-size: 1.25rem;
   margin-top: 2rem;
@@ -767,14 +759,12 @@
   transition: all 0.35s;
   outline: none;
 }
-
 .page2__btn a{
   position: relative;
   z-index: 2;
   color: #131313;
   text-decoration: none;
 }
-
 .page2__btn:after {
   position: absolute;
   content: '';
@@ -786,25 +776,20 @@
   transition: all 0.2s;
   border-radius: 4px;
 }
-
 .page2__btn:hover {
   color: #131313;
 }
-
 .page2__btn:hover:after {
   width: 100%;
 }
-
 .page2__img--container {
   text-align: center;
 }
-
 #page2__img {
   height: 110%;
   width: 110%;
 }
-
-/*Mobile Responsive*/
+/*Mobile Responsive FOR SAMANTHA*/
 @media screen and (max-width: 768px){
   .page2__container {
     display: grid;
@@ -815,48 +800,42 @@
     margin: 0 auto;
     height: 90vh;
   }
-
   .page2__content {
     text-align: center;
     margin-bottom: 4rem;
   }
-
   .page2__content h1 {
     font-size: 2.5rem;
     margin-top: 2rem;
   }
-
   .page2__content h2 {
     font-size: 3rem;
   }
-
   .page2__content p {
     margin-top: 1rem;
     font-size: 1.5rem;
   }
 }
-
 @media screen and (max-width: 480px) {
   .page2__content h1 {
     font-size: 2rem;
     margin-top: 3rem;
   }
-
   .page2__content h2 {
     font-size: 2rem;
   }
-
   .page2__content p {
     margin-top: 2rem;
     font-size: 1.5rem;
   }
-
   .page2__btn {
     padding: 12px 36px;
     margin: 2.5rem 0;
   }
 }
+/* END OF PAGE 2 CONTENT THAT WAS INTRODUCTION PAGE FOR SAMANTHA/PC */
 
+/* START OF BUILD SECTION ON SAMANTHA PAGE */
 .buildingpc {
   background: #E4D8DC;
   display: flex;
@@ -876,8 +855,97 @@
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
-/* Footer CSS */
 
+/* PROJECTS INTRODUCTION SECTION */
+.projects__page {
+  background: #E4D8DC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 260vh;
+}
+
+.projects__page h1{
+  background-color: #141414;
+  background-image: #fff;
+  background-size: 100%;
+  /* margin-bottom: 0.5rem; */
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.projects__page__card {
+  display: grid;
+  grid-template-columns: 2;
+  grid-auto-rows: auto;
+  float: left;
+  margin: 1.5rem;
+  height: 600px;
+  width: 700px;
+  border-radius: 4px;
+  background-image: url("/images/photo-panda-v2-better.jpg");
+  background-size: cover;
+  /* float: 50%; */
+  position: relative;
+  color: #fff;
+}
+
+.projects__page__card:nth-child(2) {
+  background-image: url("/images/Anime\ toast\ run.jpg");
+}
+
+.projects__page h2 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.3rem;
+  padding: 2px 4px;
+  border: none;
+  /* border-radius: 4px; */
+  background: #141414;
+}
+.projects__page__card p {
+  display: none;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 4px;
+  background: #FFC286;
+}
+.projects__page__card:hover p {
+  display: block;
+}
+
+.projects__page__card button {
+  display: none;
+  color: #141414;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background: #FFC286; 
+  cursor: pointer;
+  position: absolute;
+  outline: none;
+  top: 490px;
+  left: 10px;
+  font-size: 1rem;
+}
+
+.projects__page__card:hover {
+  transform: scale(1.075);
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+
+/* Footer CSS */
 .footer__container {
   background-color: #fff;
   padding: 5rem 0;
