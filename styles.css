@@ -877,6 +877,7 @@
   top: 5rem;
   align-items: center;
   font-size: 2.5rem;
+  margin-bottom: 10rem;
 }
 
 .card__container {
@@ -887,7 +888,6 @@
 
 img {
   position: relative;
-  top: 8rem;
   border-radius: 4px;
   object-fit: cover;
   width: 400px;
@@ -896,25 +896,17 @@ img {
 
 .projects__page .projects__card1 {
   flex: 25%;
-  padding: 7px;
-  padding-bottom: 0;
 }
 
 .projects__page .projects__card2 {
   flex: 25%;
-  padding: 7px;
-  padding-bottom: 0;
 }
 
 .projects__page .projects__card3 {
   flex: 25%;
-  padding: 7px;
-  padding-bottom: 0;
 }
 .projects__page .projects__card4 {
   flex: 25%;
-  padding: 7px;
-  padding-bottom: 0;
 }
 
 .projects__page .projects__card1:hover {
