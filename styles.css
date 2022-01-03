@@ -4,8 +4,7 @@
   padding: 0;
   font-family: 'Kumbh Sans', sans-serif;
 }
-/* made a change as a test from laptop :DDD */
-/* change from pc */
+
 .navbar {
   background: #99A799;
   height: 80px;
@@ -113,21 +112,20 @@
    transition: all 0.3s ease; 
 }
 
-/* .navbar2__links {
-    background: #C9CCD5;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    position: sticky;
-    top: 0;
-    z-index: 0;
-} */
 .navbar__links_projects:hover {
   color: #d3e4cd;
   transition: all 0.3s ease; 
 }
+
+/* .dropdown {
+  margin-top: 1rem;
+  background-color: #fff;
+  position: relative;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+} */
+
 
 @media screen and (max-width: 960px) { /*when the screen gets too small, make a condensed menu bar*/
   .navbar__container {
