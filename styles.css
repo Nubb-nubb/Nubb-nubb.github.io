@@ -445,7 +445,17 @@
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
-
+.services h3 {
+  background-color: #141414;
+  background-image: #fff;
+  background-size: 100%;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
 .services__container {
   display: flex;
   justify-content: center;
@@ -857,57 +867,82 @@
 /* PROJECTS INTRODUCTION SECTION */
 .projects__page {
   background: #E4D8DC;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
+  text-align: center;
   height: 260vh;
 }
 
-.projects__page h1{
-  background-color: #141414;
-  background-image: #fff;
-  background-size: 100%;
-  /* margin-bottom: 0.5rem; */
-  margin-top: 2rem;
-  font-size: 2.5rem;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-
-.projects__page__card {
-  float: left;
-  margin: 5rem;
-  margin-left: 13rem;
-  margin-bottom: 0rem;
-  height: 600px;
-  width: 700px;
-  border-radius: 4px;
-  background-image: url("/images/photo-panda-v2-better.jpg");
-  background-size: cover;
-  /* float: 50%; */
+.projects__page__container h1{
   position: relative;
-  color: #fff;
+  top: 5rem;
+  align-items: center;
+  font-size: 2.5rem;
 }
 
-.projects__page__card:nth-child(2) {
-  float: left;
-  margin-left: 0rem;
-  background-image: url("/images/matcha-keep-angle.jpg");
+.card__container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
-.projects__page__card:nth-child(3) {
-  margin-left: 13rem;
-  float: left;
-  background-image: url("/images/Anime\ toast\ run.jpg");
+img {
+  position: relative;
+  top: 8rem;
+  border-radius: 4px;
+  object-fit: cover;
+  width: 400px;
+  height: 400px;
 }
 
-.projects__page__card:nth-child(4) {
-  margin-left: 0rem;
-  float: left;
-  background-image: url("/images/Roxanne-machine.jpg");
+.projects__page .projects__card1 {
+  flex: 25%;
+  padding: 7px;
+  padding-bottom: 0;
 }
+
+.projects__page .projects__card2 {
+  flex: 25%;
+  padding: 7px;
+  padding-bottom: 0;
+}
+
+.projects__page .projects__card3 {
+  flex: 25%;
+  padding: 7px;
+  padding-bottom: 0;
+}
+.projects__page .projects__card4 {
+  flex: 25%;
+  padding: 7px;
+  padding-bottom: 0;
+}
+
+.projects__page .projects__card1:hover {
+  transform: scale(1.07);
+  transition: 0.1 ease-in;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.projects__page .projects__card2:hover {
+  transform: scale(1.07);
+  transition: 0.1 ease-in;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.projects__page .projects__card3:hover {
+  transform: scale(1.07);
+  transition: 0.1 ease-in;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.projects__page .projects__card4:hover {
+  transform: scale(1.07);
+  transition: 0.1 ease-in;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+
 .projects__page h2 {
   position: absolute;
   top: 10px;
