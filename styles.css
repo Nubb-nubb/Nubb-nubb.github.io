@@ -879,11 +879,10 @@
 }
 
 .projects__page__card {
-  display: grid;
-  grid-template-columns: 2;
-  grid-auto-rows: auto;
   float: left;
-  margin: 1.5rem;
+  margin: 5rem;
+  margin-left: 13rem;
+  margin-bottom: 0rem;
   height: 600px;
   width: 700px;
   border-radius: 4px;
@@ -895,14 +894,20 @@
 }
 
 .projects__page__card:nth-child(2) {
+  float: left;
+  margin-left: 0rem;
   background-image: url("/images/matcha-keep-angle.jpg");
 }
 
 .projects__page__card:nth-child(3) {
+  margin-left: 13rem;
+  float: left;
   background-image: url("/images/Anime\ toast\ run.jpg");
 }
 
 .projects__page__card:nth-child(4) {
+  margin-left: 0rem;
+  float: left;
   background-image: url("/images/Roxanne-machine.jpg");
 }
 .projects__page h2 {
@@ -910,15 +915,16 @@
   top: 10px;
   left: 10px;
   font-size: 1.3rem;
-  padding: 2px 4px;
+  padding: 6px 7px;
   border: none;
-  /* border-radius: 4px; */
+  border-radius: 4px;
   background: #141414;
 }
 .projects__page__card p {
   display: none;
   position: absolute;
-  top: 50%;
+  left: 11rem;
+  top: 16rem;
   text-align: center;
   font-size: 1.4rem;
   padding: 12px 18px;
@@ -931,7 +937,7 @@
 }
 
 .projects__page__card button {
-  display: none;
+  display: fixed;
   color: #141414;
   padding: 10px 20px;
   border: none;
