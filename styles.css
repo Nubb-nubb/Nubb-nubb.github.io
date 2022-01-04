@@ -530,8 +530,8 @@
     margin-top: 0.4rem;
   }
   .services__card{
-    height: 500px;
-    width: 600px;
+    height: 600px;
+    width: 700px;
   }
 }
 @media screen and (max-width: 480px){
