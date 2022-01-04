@@ -373,7 +373,7 @@
 }
 
 /*Mobile Responsive*/
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1300px){
   .main__container {
     display: grid;
     grid-template-columns: auto;
@@ -520,7 +520,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 960px){
+@media screen and (max-width: 1900px){
   .services{
     height: 1600px;
   }
@@ -798,7 +798,7 @@
   width: 110%;
 }
 /*Mobile Responsive FOR SAMANTHA*/
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1400px){
   .page2__container {
     display: grid;
     grid-template-columns: auto;
@@ -806,11 +806,12 @@
     justify-content: center;
     width: 100%;
     margin: 0 auto;
-    height: 90vh;
+    height: 190vh;
   }
   .page2__content {
     text-align: center;
     margin-bottom: 4rem;
+    margin-top: 4rem;
   }
   .page2__content h1 {
     font-size: 2.5rem;
@@ -825,11 +826,21 @@
   }
 }
 @media screen and (max-width: 480px) {
+  .page2__container {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+  }
   .page2__content h1 {
     font-size: 2rem;
     margin-top: 3rem;
   }
   .page2__content h2 {
+    margin-top: 2rem;
     font-size: 2rem;
   }
   .page2__content p {
