@@ -731,6 +731,7 @@ html {
   justify-self: center;
   margin: 0 auto;
   height: 82vh;
+  /* background-color: bacl */
   background-color: #F3F1F5;
   z-index: 1;
   width: 100%;
@@ -849,6 +850,12 @@ html {
   .page2__content p {
     margin-top: 1rem;
     font-size: 1.5rem;
+  }
+  #page2__img {
+    height: 60%;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media screen and (max-width: 480px) {
