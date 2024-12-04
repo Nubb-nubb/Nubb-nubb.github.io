@@ -9,7 +9,7 @@ window.onload = function () {
   gapi.load('client', () => {
     console.log("GAPI loaded!");
     gapi.client.init({
-      apiKey: 'AIzaSyAsgOzQa2NNaxJ7bMrmYNDmupjsV36x9ck', // Placeholder for API Key
+      apiKey: apiKey, // Use the real variable
       discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"]
     }).then(() => {
       console.log("Gmail API Initialized!");
@@ -18,16 +18,16 @@ window.onload = function () {
 
   // Initialize GIS Token Client
   tokenClient = google.accounts.oauth2.initTokenClient({
-    client_id: '183468814376-nqmlg34bhl05e0qb412bdvcesh2o3goh.apps.googleusercontent.com', // Placeholder for Client ID
+    client_id: clientId, // Use the real variable
     scope: 'https://www.googleapis.com/auth/gmail.readonly',
     callback: (response) => {
-      if (response.error) {
-        console.error("OAuth token request failed:", response);
-        alert("Authorization failed. Please try again.");
-        return;
-      }
-      console.log("OAuth token granted:", response);
-      listSubscriptions();
+        if (response.error) {
+            console.error("OAuth token request failed:", response);
+            alert("Authorization failed. Please try again.");
+            return;
+        }
+        console.log("OAuth token granted:", response);
+        listSubscriptions();
     },
   });
 
