@@ -5,6 +5,10 @@ const clientId = "${CLIENT_ID}";
 let tokenClient;
 
 window.onload = function () {
+  // Log the clientId and apiKey to verify correct replacement
+  console.log("Client ID:", clientId);
+  console.log("API Key:", apiKey);
+
   // Load GAPI
   gapi.load('client', () => {
     console.log("GAPI loaded!");
@@ -13,7 +17,9 @@ window.onload = function () {
       discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"]
     }).then(() => {
       console.log("Gmail API Initialized!");
-    }).catch(error => console.error("Error initializing GAPI:", error));
+    }).catch(error => {
+      console.error("Error initializing GAPI:", error);
+    });
   });
 
   // Initialize GIS Token Client
@@ -21,13 +27,13 @@ window.onload = function () {
     client_id: clientId, // Use the real variable
     scope: 'https://www.googleapis.com/auth/gmail.readonly',
     callback: (response) => {
-        if (response.error) {
-            console.error("OAuth token request failed:", response);
-            alert("Authorization failed. Please try again.");
-            return;
-        }
-        console.log("OAuth token granted:", response);
-        listSubscriptions();
+      if (response.error) {
+        console.error("OAuth token request failed:", response);
+        alert("Authorization failed. Please try again.");
+        return;
+      }
+      console.log("OAuth token granted:", response);
+      listSubscriptions();
     },
   });
 
@@ -38,8 +44,10 @@ window.onload = function () {
 // Handle Authorization Click
 function handleAuthClick() {
   console.log("Authorize button clicked!");
+  console.log("Requesting OAuth token with clientId:", clientId);
   tokenClient.requestAccessToken(); // Request OAuth token
 }
+
 
 // List Subscriptions
 function listSubscriptions() {

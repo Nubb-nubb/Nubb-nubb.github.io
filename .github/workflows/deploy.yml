@@ -18,6 +18,9 @@ jobs:
         sed -i "s|\${API_KEY}|${{ secrets.API_KEY }}|g" app.js
         sed -i "s|\${CLIENT_ID}|${{ secrets.CLIENT_ID }}|g" app.js
 
+    - name: Debug app.js content
+      run: cat app.js # Verify if placeholders were replaced correctly
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
