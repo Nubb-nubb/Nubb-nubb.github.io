@@ -4,6 +4,13 @@ const clientId = "${CLIENT_ID}";
 // Initialize GIS and GAPI
 let tokenClient;
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Log headers for debugging
+  console.log('Adding headers to enable Cross-Origin policies.');
+  document.querySelector('meta[http-equiv="Cross-Origin-Opener-Policy"]').setAttribute('content', 'same-origin');
+  document.querySelector('meta[http-equiv="Cross-Origin-Embedder-Policy"]').setAttribute('content', 'require-corp');
+});
+
 window.onload = function () {
   // Log the clientId and apiKey to verify correct replacement
   console.log("Client ID:", clientId);
@@ -24,7 +31,7 @@ window.onload = function () {
 
   // Initialize GIS Token Client
   tokenClient = google.accounts.oauth2.initTokenClient({
-    client_id: clientId, // Use the real variable
+    client_id: clientId, 
     scope: 'https://www.googleapis.com/auth/gmail.readonly',
     callback: (response) => {
       if (response.error) {
@@ -35,7 +42,12 @@ window.onload = function () {
       console.log("OAuth token granted:", response);
       listSubscriptions();
     },
+    error_callback: (error) => {
+      console.error("Error during OAuth flow:", error);
+      alert("An error occurred during authorization.");
+    }
   });
+  
 
   // Add click event to "Authorize" button
   document.getElementById("authorize").onclick = handleAuthClick;
