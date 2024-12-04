@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Subscription Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://apis.google.com/js/api.js" async defer></script>
+</head>
+<body>
+  <h1>manage ur gmail subscribs ^-^ (beta)</h1>
+  
+  <!-- Authorize Button -->
+  <button id="authorize" class="authorize-btn">Authorize Gmail</button>
+  
+  <!-- Subscriptions Section -->
+  <div id="subscriptions-container" style="display: none;">
+    <h2>Your Subscriptions</h2>
+    <div id="subscriptions"></div>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
