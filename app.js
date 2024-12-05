@@ -1,5 +1,5 @@
-const apiKey = "${API_KEY}";
-const clientId = "${CLIENT_ID}";
+const apiKey = "API_KEY";
+const clientId = "CLIENT_ID";
 
 // Initialize GIS and GAPI
 let tokenClient;
