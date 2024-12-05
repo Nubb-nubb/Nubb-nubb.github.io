@@ -15,12 +15,11 @@ jobs:
 
     - name: Inject secrets into config.js
       run: |
-        echo "const CONFIG = {" > ./public/config.js
-        echo "  API_KEY: '${{ secrets.APIKEY }}'," >> ./public/config.js
-        echo "  CLIENT_ID: '${{ secrets.CLIENTID }}'" >> ./public/config.js
-        echo "};" >> ./public/config.js
-        echo "export default CONFIG;" >> ./public/config.js
-    
+        echo "const CONFIG = {" > ./config.js
+        echo "  API_KEY: '${{ secrets.APIKEY }}'," >> ./config.js
+        echo "  CLIENT_ID: '${{ secrets.CLIENTID }}'" >> ./config.js
+        echo "};" >> ./config.js
+        echo "export default CONFIG;" >> ./config.js
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
