@@ -1,5 +1,5 @@
-const apiKey = "AIzaSyDKGdFy5jC9WCwk6zjAgQQZ8Q1PgfB9Y0A";
-const clientId = "183468814376-1chtrl8jfplol2effjelo0lkt10c5t9p.apps.googleusercontent.com";
+const apiKey = "APIKEY";
+const clientId = "CLIENTID";
 
 // Initialize GIS and GAPI
 let tokenClient;
