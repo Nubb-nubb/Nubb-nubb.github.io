@@ -20,6 +20,7 @@ jobs:
         echo "  CLIENT_ID: '${{ secrets.CLIENTID }}'" >> ./public/config.js
         echo "};" >> ./public/config.js
         echo "export default CONFIG;" >> ./public/config.js
+    
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
