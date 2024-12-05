@@ -5,30 +5,23 @@ const clientId = CONFIG.CLIENT_ID;
 
 
 
-// Initialize GIS and GAPI
 let tokenClient;
 
 window.onload = function () {
-  // Log the clientId and apiKey to verify correct replacement
-  console.log("Client ID:", clientId);
-  console.log("API Key:", apiKey);
-
   // Load GAPI
   gapi.load('client', () => {
     console.log("GAPI loaded!");
     gapi.client.init({
-      apiKey: apiKey, // Use the real variable
+      apiKey: '${API_KEY}', // Placeholder for API Key
       discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"]
     }).then(() => {
       console.log("Gmail API Initialized!");
-    }).catch(error => {
-      console.error("Error initializing GAPI:", error);
-    });
+    }).catch(error => console.error("Error initializing GAPI:", error));
   });
 
   // Initialize GIS Token Client
   tokenClient = google.accounts.oauth2.initTokenClient({
-    client_id: clientId, 
+    client_id: '${CLIENT_ID}', // Placeholder for Client ID
     scope: 'https://www.googleapis.com/auth/gmail.readonly',
     callback: (response) => {
       if (response.error) {
@@ -39,12 +32,7 @@ window.onload = function () {
       console.log("OAuth token granted:", response);
       listSubscriptions();
     },
-    error_callback: (error) => {
-      console.error("Error during OAuth flow:", error);
-      alert("An error occurred during authorization.");
-    }
   });
-  
 
   // Add click event to "Authorize" button
   document.getElementById("authorize").onclick = handleAuthClick;
@@ -53,10 +41,8 @@ window.onload = function () {
 // Handle Authorization Click
 function handleAuthClick() {
   console.log("Authorize button clicked!");
-  console.log("Requesting OAuth token with clientId:", clientId);
   tokenClient.requestAccessToken(); // Request OAuth token
 }
-
 
 // List Subscriptions
 function listSubscriptions() {
@@ -148,7 +134,7 @@ function toggleDropdown(groupId) {
     content.style.display = "none"; // Hide dropdown content
   }
 }
-window.toggleDropdown = toggleDropdown;
+
 
 
 async function processMessagesInBatches(messages, batchSize, delayMs, groupedSubscriptions, subscriptionsDiv) {
@@ -192,6 +178,7 @@ function parseUnsubscribeLinks(headerValue) {
 }
 
 
+// Unsubscribe Function
 function unsubscribe(unsubscribeLink) {
   if (unsubscribeLink.startsWith("http")) {
     // Redirect the user to the unsubscribe page
@@ -202,6 +189,3 @@ function unsubscribe(unsubscribeLink) {
     console.error("Invalid unsubscribe link:", unsubscribeLink);
   }
 }
-
-// Expose unsubscribe function globally
-window.unsubscribe = unsubscribe;
