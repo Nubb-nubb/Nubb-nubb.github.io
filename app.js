@@ -1,5 +1,8 @@
-const apiKey = "AIzaSyDKGdFy5jC9WCwk6zjAgQQZ8Q1PgfB9Y0A";
-const clientId = "183468814376-1chtrl8jfplol2effjelo0lkt10c5t9p.apps.googleusercontent.com";
+import CONFIG from './config.js';
+
+const apiKey = CONFIG.API_KEY;
+const clientId = CONFIG.CLIENT_ID;
+
 
 
 // Initialize GIS and GAPI
@@ -110,13 +113,13 @@ function renderGroupedSubscriptions(groupedSubscriptions, subscriptionsDiv) {
     // Add a dropdown button and collapsible content
     subscriptionsDiv.innerHTML += `
       <div class="company-group">
-        <button class="dropdown-btn" onclick="toggleDropdown('')">
-           ▼
+        <button class="dropdown-btn" onclick="toggleDropdown('${companyId}')">
+          ${company} ▼
         </button>
-        <div id="" class="dropdown-content" style="display: none;">
+        <div id="${companyId}" class="dropdown-content" style="display: none;">
           ${
             firstUnsubscribeLink
-              ? `<button class="group-unsubscribe-btn" onclick="unsubscribe('')">Unsubscribe</button>`
+              ? `<button class="group-unsubscribe-btn" onclick="unsubscribe('${firstUnsubscribeLink}')">Unsubscribe</button>`
               : "<p>No unsubscribe link available for this group.</p>"
           }
         </div>
