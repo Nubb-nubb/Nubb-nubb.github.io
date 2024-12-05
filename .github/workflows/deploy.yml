@@ -19,7 +19,6 @@ jobs:
         echo "  API_KEY: '${{ secrets.APIKEY }}'," >> ./config.js
         echo "  CLIENT_ID: '${{ secrets.CLIENTID }}'" >> ./config.js
         echo "};" >> ./config.js
-        echo "export default CONFIG;" >> ./config.js
 
     - name: Commit and Push Changes
       run: |
