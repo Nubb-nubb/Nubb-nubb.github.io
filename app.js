@@ -1,4 +1,4 @@
-import CONFIG from 'config.js';
+import CONFIG from './config.js';
 
 const apiKey = CONFIG.API_KEY;
 const clientId = CONFIG.CLIENT_ID;
@@ -148,7 +148,7 @@ function toggleDropdown(groupId) {
     content.style.display = "none"; // Hide dropdown content
   }
 }
-
+window.toggleDropdown = toggleDropdown;
 
 
 async function processMessagesInBatches(messages, batchSize, delayMs, groupedSubscriptions, subscriptionsDiv) {
