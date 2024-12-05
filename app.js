@@ -192,7 +192,6 @@ function parseUnsubscribeLinks(headerValue) {
 }
 
 
-// Unsubscribe Function
 function unsubscribe(unsubscribeLink) {
   if (unsubscribeLink.startsWith("http")) {
     // Redirect the user to the unsubscribe page
@@ -203,3 +202,6 @@ function unsubscribe(unsubscribeLink) {
     console.error("Invalid unsubscribe link:", unsubscribeLink);
   }
 }
+
+// Expose unsubscribe function globally
+window.unsubscribe = unsubscribe;
