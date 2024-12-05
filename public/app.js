@@ -1,5 +1,8 @@
-const apiKey = "${API_KEY}";
-const clientId = "${CLIENT_ID}";
+import CONFIG from './config.js';
+
+const apiKey = CONFIG.API_KEY;
+const clientId = CONFIG.CLIENT_ID;
+
 
 
 // Initialize GIS and GAPI

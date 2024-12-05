@@ -13,22 +13,19 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set environment variables for secrets
+    - name: Inject secrets into config.js
       run: |
-        echo "API_KEY=${{ secrets.APIKEY }}" >> $GITHUB_ENV
-        echo "CLIENT_ID=${{ secrets.CLIENTID }}" >> $GITHUB_ENV
-      id: set_secrets
+        echo "const CONFIG = {" > ./public/config.js
+        echo "  API_KEY: '${{ secrets.APIKEY }}'," >> ./public/config.js
+        echo "  CLIENT_ID: '${{ secrets.CLIENTID }}'" >> ./public/config.js
+        echo "};" >> ./public/config.js
+        echo "export default CONFIG;" >> ./public/config.js
 
-    - name: Inject secrets into the code
-      run: |
-        # Use 'envsubst' to replace placeholders with actual secrets
-        envsubst < app.js > app_temp.js && mv app_temp.js app.js
-
-    - name: Debug app.js content
-      run: cat app.js
+    - name: Debug config.js content
+      run: cat ./public/config.js
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./
+        publish_dir: ./public
