@@ -21,9 +21,6 @@ jobs:
         echo "};" >> ./public/config.js
         echo "export default CONFIG;" >> ./public/config.js
 
-    - name: Debug config.js content
-      run: cat ./public/config.js
-
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
