@@ -13,10 +13,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
+    - name: Set environment variables for secrets
+      run: |
+        echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
+        echo "CLIENT_ID=${{ secrets.CLIENT_ID }}" >> $GITHUB_ENV
+      id: set_secrets
+
     - name: Inject secrets into the code
       run: |
-        sed -i "s|\${API_KEY}|${{ secrets.API_KEY }}|g" app.js
-        sed -i "s|\${CLIENT_ID}|${{ secrets.CLIENT_ID }}|g" app.js
+        sed -i "s|\${API_KEY}|$API_KEY|g" app.js
+        sed -i "s|\${CLIENT_ID}|$CLIENT_ID|g" app.js
 
     - name: Debug app.js content
       run: cat app.js 
