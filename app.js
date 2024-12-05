@@ -1,4 +1,4 @@
-import CONFIG from 'config.js';
+import CONFIG from './config.js';
 
 const apiKey = CONFIG.API_KEY;
 const clientId = CONFIG.CLIENT_ID;
