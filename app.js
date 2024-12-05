@@ -87,13 +87,20 @@ function listSubscriptions() {
 
 // Helper function to extract company name from "From" field
 function extractCompanyName(fromField) {
-  const match = fromField.match(/@([\w.-]+)/); // Extract domain (e.g., staples.com)
-  if (match && match[1]) {
-    const domainParts = match[1].split('.');
-    return domainParts[0].charAt(0).toUpperCase() + domainParts[0].slice(1); // Capitalize the domain
-  }
+  // Match sender name and email domain
+  const nameMatch = fromField.match(/^"?([^"]*)"?\s*<.*@.*>/); // Extract sender name
+  const domainMatch = fromField.match(/@([\w.-]+)/); // Extract domain
+
+  const senderName = nameMatch && nameMatch[1] ? nameMatch[1].trim() : null;
+  const domain = domainMatch && domainMatch[1] ? domainMatch[1].trim() : null;
+
+  // Prefer the sender name if available; fallback to domain
+  if (senderName) return senderName;
+  if (domain) return domain.split('.')[0].charAt(0).toUpperCase() + domain.split('.')[0].slice(1);
+
   return "Unknown Company";
 }
+
 
 // Render grouped subscriptions with dropdowns
 function renderGroupedSubscriptions(groupedSubscriptions, subscriptionsDiv) {
