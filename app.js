@@ -4,13 +4,6 @@ const clientId = "${CLIENT_ID}";
 // Initialize GIS and GAPI
 let tokenClient;
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Log headers for debugging
-  console.log('Adding headers to enable Cross-Origin policies.');
-  document.querySelector('meta[http-equiv="Cross-Origin-Opener-Policy"]').setAttribute('content', 'same-origin');
-  document.querySelector('meta[http-equiv="Cross-Origin-Embedder-Policy"]').setAttribute('content', 'require-corp');
-});
-
 window.onload = function () {
   // Log the clientId and apiKey to verify correct replacement
   console.log("Client ID:", clientId);
